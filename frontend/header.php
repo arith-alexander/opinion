@@ -11,7 +11,7 @@ echo'
 	<link href="https://fonts.googleapis.com/css?family=Fjord+One" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet" type="text/css">
 	';
-echo '<title>Opinion Survey</title>';
+echo '<title>'.$pagename.'</title>';
 
 echo'</head>';
 

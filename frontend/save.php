@@ -1,10 +1,30 @@
-<html>
-<head>
-<title>アンケート回答ありがとうございます</title>
-</head>
+
+<?php
+$pagename = "Thank You";
+include('header.php'); 
+
+?>
 <body>
-<h1>アンケート回答ありがとうございます</h1>
+    <div id="main" class="container_12">
+        
+
+        <div class="grid_12" style="height:100px;">&nbsp;</div>
+
+        <div class="grid_4 ">&nbsp;</div>
+        <div class="grid_4 ">
+            <center>
+                <h1>アンケート回答ありがとうございます</h1>
+            </center>
+        </div>
+        <div class="grid_4 ">&nbsp;</div>
+
+        <div class="grid_12" style="height:100px;">&nbsp;</div>
+
+    </div>
 </body>
+
+
+
 </html>
 
 

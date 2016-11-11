@@ -40,31 +40,35 @@ $choices = array();
 while ($choice = $result->fetch_assoc()) {
     $choices[$choice["question_id"]][] = $choice;
 }
-
+$pagename = "Survey";
+include('header.php'); 
 ?>
 
-<html>
-<head>
-<title>アンケート</title>
-</head>
 <body>
-<form name="input" action="save.php" method="post">
+<div class="container_12">
+	<div class="grid_12" style="height:100px;">&nbsp;</div>
+		<div class="grid_2 ">&nbsp;</div>
+			<div class="grid_8">
+				<center><h2>We value your opinion.</h2></center>
 
-<?php
-foreach ($questions as $question) { ?>
+					<form name="input" action="save.php" method="post">
 
-<?=$question["content"]?>
-<br>
+					<?php
+					foreach ($questions as $question) { ?>
+					<div class="question">
+					<b><?=$question["content"]?></b><br>
+				    <?php
+				    foreach ($choices[$question["id"]] as $choice) { ?>
+				        <input type="radio" name="q[<?=$question["id"]?>]" value="<?=$choice["id"]?>"><?=$choice["content"]?>
+				    <?php }?>
+					</div>
 
-    <?php
-    foreach ($choices[$question["id"]] as $choice) { ?>
-        <input type="radio" name="q[<?=$question["id"]?>]" value="<?=$choice["id"]?>"><?=$choice["content"]?>
-    <?php }?>
-<br>
+					<?php }?>
 
-<?php }?>
-
-<input type="submit" value="回答">
-</form>
+				<center><input type="submit" value="回答"></center>
+				</form>
+			</div>
+		<div class="grid_2 ">&nbsp;</div>
+	</div>
 </body>
 </html>
