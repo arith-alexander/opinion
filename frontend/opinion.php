@@ -1,16 +1,33 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $servername = "35.163.61.229";
 $username = "developer";
 $password = "devpass";
+$dbname = "opinion";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+
+$conn->set_charset("utf8");
+$sql = "SELECT * FROM question";
+$result = $conn->query($sql);
+
+if (!$result) {
+    echo "empty";
+}
+
+if ($result->num_rows > 0) {
+    print_r($result->fetch_all());
+}
+
 ?>
 
 <html>
