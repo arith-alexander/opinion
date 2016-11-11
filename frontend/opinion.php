@@ -51,7 +51,7 @@ include('header.php');
 			<div class="grid_8">
 				<center><h2>We value your opinion.</h2></center>
 
-					<form name="input" action="opinion.php" method="post">
+					<form name="input" action="save.php" method="post">
 
 					<?php
 					foreach ($questions as $question) { ?>
