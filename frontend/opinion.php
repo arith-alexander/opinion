@@ -29,6 +29,17 @@ while ($question = $result->fetch_assoc()) {
     $questions[] = $question;
 }
 
+$sql = "SELECT * FROM choice";
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("choice is empty");
+}
+
+$choices = array();
+while ($choice = $result->fetch_assoc()) {
+    $choices[$choice["question_id"]][] = $choice;
+}
 $pagename = "Survey";
 include('header.php'); 
 ?>
@@ -39,23 +50,20 @@ include('header.php');
 		<div class="grid_2 ">&nbsp;</div>
 			<div class="grid_8">
 				<center><h2>We value your opinion.</h2></center>
-				<form name="input" action="opinion.php" method="post">
 
-				<?php
-				foreach ($questions as $question) { ?>
-				<div class="question">
+					<form name="input" action="opinion.php" method="post">
 
-				<b><?=$question["content"]?></b></br>
-				
-				<input type="radio" name="age" value="0">〜19
-				<input type="radio" name="age" value="1" checked="checked">20〜29
-				<input type="radio" name="age" value="2">30〜39
-				<input type="radio" name="age" value="3">40〜49
-				<input type="radio" name="age" value="4">50〜59
-				<input type="radio" name="age" value="5">60〜
-				</div>
+					<?php
+					foreach ($questions as $question) { ?>
+					<div class="question">
+					<b><?=$question["content"]?></b><br>
+				    <?php
+				    foreach ($choices[$question["id"]] as $choice) { ?>
+				        <input type="radio" name="q[<?=$question["id"]?>]" value="<?=$choice["id"]?>"><?=$choice["content"]?>
+				    <?php }?>
+					</div>
 
-				<?php }?>
+					<?php }?>
 
 				<center><input type="submit" value="回答"></center>
 				</form>
