@@ -48,7 +48,7 @@ while ($choice = $result->fetch_assoc()) {
 <title>アンケート</title>
 </head>
 <body>
-<form name="input" action="opinion.php" method="post">
+<form name="input" action="save.php" method="post">
 
 <?php
 foreach ($questions as $question) { ?>
