@@ -58,7 +58,7 @@ foreach ($questions as $question) { ?>
 
     <?php
     foreach ($choices[$question["id"]] as $choice) { ?>
-        <input type="radio" name="q[<?=$choice["id"]?>]" value="<?=$choice["id"]?>"><?=$choice["content"]?>
+        <input type="radio" name="q[<?=$question["id"]?>]" value="<?=$choice["id"]?>"><?=$choice["content"]?>
     <?php }?>
 <br>
 
