@@ -1,0 +1,18 @@
+*.swp
+._*
+.DS_Store
+nbproject
+project.properties
+project.xml
+.bash*
+.viminfo
+.qmail
+Maildir
+yii
+
+# Git ignore for Eclipse
+.buildpath
+.project
+.settings/
+
+.idea
