@@ -1,4 +1,5 @@
 ﻿<?php
+$pagename = "Welcome to the Opinion Survey";
 include('header.php'); 
 ?>
 

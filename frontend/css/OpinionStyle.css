@@ -34,7 +34,15 @@ a {
   flex-wrap:wrap;
 }
 
+input[type=submit] {
+  height:80px;
+  width:100px;
+  font-size:1.5em;
+}
 
+.question {
+  padding: 25px 5px;
+}
 
 .message {
     padding: 15px;
