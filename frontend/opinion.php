@@ -1,3 +1,18 @@
+<?php
+$servername = "35.163.61.229";
+$username = "developer";
+$password = "devpass";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+
 <html>
 <head>
 <title>アンケート</title>
