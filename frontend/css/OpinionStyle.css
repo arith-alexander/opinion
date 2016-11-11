@@ -1,0 +1,46 @@
+
+html { 
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:100%;
+  height:100%;  
+}
+
+body {
+    color: #003704;
+}
+
+h1, h2 {
+    font-family: 'Amaranth', sans-serif;
+    margin-top: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tall{
+  height:100%;
+}
+
+
+#main {
+  margin-top:100px !important;
+  display:block;
+}
+
+.tilebox {
+  display:flex;
+  flex-wrap:wrap;
+}
+
+
+
+.message {
+    padding: 15px;
+    font-family: 'Fjord One';
+    display:block;
+    background:rgba(255,255,255,.6);
+    border-radius: 20px;
+    margin:2%;
+}
