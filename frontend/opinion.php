@@ -41,8 +41,6 @@ while ($choice = $result->fetch_assoc()) {
     $choices[$choice["question_id"]][] = $choice;
 }
 
-print_r($_POST);
-
 ?>
 
 <html>
